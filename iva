@@ -94,10 +94,10 @@ if __name__ == '__main__':
             print(a)
             speak(a)
         elif 'father' in query:
-            f='rakesh trivedi'
+            f='Rakesh Trivedi'
             speak(f)
         elif 'mother' in query:
-            mom='maneesha trivedi'
+            mom='Maneesha Trivedi'
             speak(mom)
         elif 'TEDITH meaning' in query:
             print('Tony Even Dead Is The Hero')
