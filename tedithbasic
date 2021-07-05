@@ -85,7 +85,7 @@ if __name__ == '__main__':
             print(branch)
             speak(branch)
 
-        elif 'soft skills' in query:
+        elif 'interpersonal' in query:
             ss="Public Speaking,Creativity, Leadership, Optimism, Management,Team Work, Detail-oreinted, Good Listener"
             print(ss)
             speak(ss)
