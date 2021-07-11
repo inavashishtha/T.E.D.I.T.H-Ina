@@ -21,9 +21,8 @@ def greet():
 def audioInput():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("I'm all ears...")
-        r.pause_threshold = 0.8
-        audio = r.listen(source)
+        print("I'm all ears...")     
+        audio = r.listen(source,timeout=1,phrase_time_limit=10)
 
     try:
         print('Just a moment...')
@@ -50,78 +49,98 @@ if __name__ == '__main__':
             about = 'Ina is a third-year undergraduate student in NIT Silchar with her major in Civil Engineering. She hails from Rewa, which is a former princely state in Madhya Pradesh. She is versatile and loves acquiring knowledge.'
             print(about)
             speak(about)
+            count=0
 
         elif 'contact' in query:
-            speak("Opening Ina's website")
+            speak("Redirecting to Ina's website")
             webbrowser.open("https://inavashishtha.github.io/")
+            count=0
             
         elif ('skills') in query:
             skill='She is adept at Python(alognwith NumPy,Pandas,Matplotlib), C++, C, HTML, CSS,MS Excel,SQL, AutoCAD, QGIS. She is also a good orator and is competent in analytics and problem solving.'
             print(skill)
             speak(skill)
+            count=0
 
         elif 'hobbies' in query:
             hobby="Ina likes reading non-fiction books,is an amateur in writing poems and is an ardent movie buff. She listens to the ghazals of Jagjit Singh ji. She is a blend of old-school 90s kid and care-free Gen Z. Moreover, she's good at badminton and loves riding a bicycle."
             print(hobby)
             speak(hobby)
+            count=0
 
         elif 'linkedin' in query:
             speak("Opening Ina's LinkedIn Profile")
             webbrowser.open("https://www.linkedin.com/in/ina15")
+            count=0
         
         elif 'project' in query:
             p='''1.TEDITH-Ina's Assistant in March 2021,built by using python libraries,program works as a virtual assistant and tells the basic details about Ina.
             2. COVID-19 Vaccination in Shahdol,built in QGIS using the shapefiles in BHUVAN and government database,found out the distance between various health care centres and the nearest blood banks in Shahdol District.'''
             print(p)
             speak(p)
+            count=0
 
         elif 'internship' in query:
             i="Industrial Training at Lines International Jaipur, Business Management Intern at Rakesh Trivedi Surveyor & Loss Assessor, Environmental Resouce Intern at RES Sidhi"
             print(i)
             speak(i)
+            count=0
 
         elif 'branch' in query:
             branch='Civil Engineering'
             print(branch)
             speak(branch)
+            count=0
 
         elif 'interpersonal' in query:
             ss="Public Speaking,Creativity, Leadership, Optimism, Management,Team Work, Detail-oreinted, Good Listener"
             print(ss)
             speak(ss)
+            count=0
 
         elif any(c for c in mail_word if c in query ):
             m='ina_ug@civil.nits.ac.in'
             print(m)
             speak(m)
+            count=0
 
         elif 'summary' in query:
             summary="Seeking an opportunity to build a career that would intrinsically help me achieve greater practical excellence and learn to apply technical and sustainable solutions to various problems."
             print(summary)
             speak(summary)
+            count=0
 
         elif 'achievements'in query:
             a="HackerRank: 5-star- Gold Badge in C++ and Python, 4-star Silver Badge in Problem Solving,Qualified National Engineering Olympiad 3.0 (Round 1),Honorable Mention in Model United Nation: UNGA NIT Silchar,Winner of Smart City module (PPT on urban planning) in Tecnoesis NIT Silchar,Winner of various essay poem writing extempore debate,Letter of Appreciation by Hon. Minister of HRD Smriti Z. Irani."
             print(a)
             speak(a)
+            count=0
         
         elif 'extra curricular' in query:
             ec="Technical Secretary, Civil Engineering Society, NIT Silchar"
+            print(ec)
+            speak(a)
+            count=0
+
 
         elif 'father' in query:
             f='Rakesh Trivedi'
             print(f)
             speak(f)
+            count=0
+
 
         elif 'mother' in query:
             mom='Maneesha Trivedi'
             print(mom)
             speak(mom)
+            count=0
 
         elif ('meaning') in query:
             print('Tony Even Dead Is The Hero')
             speak('Tony Even Dead Is The Hero')
-        
+            count=0
+
         else:
             speak('Try something else...')
             count=count+1
@@ -129,5 +148,4 @@ if __name__ == '__main__':
             if count==5:
                 break
     print('Thanks for using.')
-    speak('Thanks for using.')            
-
+    speak('Thanks for using.')         
